@@ -19,11 +19,12 @@ The mission of OpenMRS is to improve health care delivery in resource-constraine
    1. [Prerequisites](#prerequisites)
    2. [Build Command](#build-command)
    3. [Deploy](#deploy)
-2. [Docker build](#docker-build)
-3. [Navigating the repository](#navigating-the-repository)
-4. [Software Development Kit](#software-development-kit)
-5. [Extending OpenMRS with Modules](#extending-openmrs-with-modules)
-6. [Documentation](#documentation)
+2. [Local Development Setup](#local-development-setup) 🚀
+3. [Docker build](#docker-build)
+4. [Navigating the repository](#navigating-the-repository)
+5. [Software Development Kit](#software-development-kit)
+6. [Extending OpenMRS with Modules](#extending-openmrs-with-modules)
+7. [Documentation](#documentation)
    1. [Developer guides](#developer-guides)
    2. [Wiki](#wiki)
    3. [Website](#website)
@@ -112,6 +113,65 @@ If all goes well (check the console output) you can access the OpenMRS applicati
 
 Refer to [Getting Started as a Developer - Maven](https://wiki.openmrs.org/display/docs/Maven) for some more information
 on useful Maven commands and build options.
+
+## Local Development Setup
+
+🚀 **Quick Start for Local Development**
+
+This fork includes optimized scripts for local development with Docker and REST API integration on port 8090.
+
+### One-Command Setup
+
+```bash
+./quick-start.sh
+```
+
+### Manual Setup
+
+```bash
+# 1. Setup development environment
+./dev-setup.sh
+
+# 2. Build development image
+./dev-build.sh
+
+# 3. Start OpenMRS with MariaDB
+./dev-start.sh
+
+# 4. Access OpenMRS at http://localhost:8090/openmrs
+```
+
+### Access URLs
+
+- **OpenMRS Web**: http://localhost:8090/openmrs
+- **REST API**: http://localhost:8090/openmrs/ws/rest/v1
+- **Admin Panel**: http://localhost:8090/openmrs/admin
+
+### Default Credentials
+
+- **Username**: `admin`
+- **Password**: `Admin123`
+
+### Development Commands
+
+```bash
+# Test REST API endpoints
+./test-api.sh
+
+# View logs
+docker compose logs -f api
+
+# Stop environment
+./dev-stop.sh
+
+# Verify setup
+./verify-setup.sh
+```
+
+### Documentation
+
+- **Complete Development Guide**: [DEVELOPMENT.md](DEVELOPMENT.md)
+- **REST Module Setup**: [REST_MODULE_DOWNLOAD.md](REST_MODULE_DOWNLOAD.md)
 
 ## Docker build
 
