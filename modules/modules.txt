@@ -1,0 +1,5 @@
+# OpenMRS Modules Configuration
+# List of modules to be automatically loaded on startup
+# Format: module-filename.omod
+
+webservices.rest-2.46.0.omod

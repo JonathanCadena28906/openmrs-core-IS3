@@ -1,5 +1,3 @@
-version: "3.7"
-
 #    This Source Code Form is subject to the terms of the Mozilla Public License,
 #    v. 2.0. If a copy of the MPL was not distributed with this file, You can
 #    obtain one at http://mozilla.org/MPL/2.0/. OpenMRS is also distributed under
@@ -33,7 +31,7 @@ services:
                 - openmrs/openmrs-core:${TAG:-dev}
                 - openmrs/openmrs-core:${TAG:-nightly}
         ports:
-            - "8080:8080"
+            - "8090:8080"
         environment:
             OMRS_DB: ${OMRS_DB:-mariadb}
             OMRS_DB_HOSTNAME: ${OMRS_DB_HOSTNAME:-db}
